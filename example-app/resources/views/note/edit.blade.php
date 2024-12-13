@@ -13,14 +13,14 @@
             <div class="col-md-6">
             <a href="{{route('note.index')}}">Atras</a>
             <h1>FORMULARIO</h1>
-                <form action="{{route('note.update', $note->id)}}" method="POST>
+                <form action="{{route('note.update', $note->id)}}" method="POST">
                     @method('PUT')
                     @csrf
                     <div class="mb-2">
                         <label for="title" class="form-label">Titulo</label>
                         <input type="text" name="title" class="form-control" id="title" value="{{$note->title}}">
                         <label for="description" class="form-label">Descripcion</label>
-                        <input type="text" name="title" class="form-control" id="description" value="{{$note->description}}">
+                        <input type="text" name="description" class="form-control" id="description" value="{{$note->description}}">
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Guardar</button>
                 </form>

@@ -31,7 +31,20 @@ class NoteController extends Controller
     public function update(Request $request, Note $note){
         
         $note->update($request->all());
-        return redirect('note.edit', compact('note'));
+        return redirect()->route('note.index');
+
+    }
+
+    public function show(Note $note){
+        
+        return view('note.show', compact('note'));
+
+    }
+
+    public function destroy(Note $note){
+        
+        $note->delete();
+        return redirect()->route('note.index');
 
     }
 }
